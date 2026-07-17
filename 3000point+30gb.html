@@ -1,10 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>MTN @30 Rewards - Share & Earn</title>
+    
+    <!-- Open Graph Meta Tags for WhatsApp Preview -->
+    <meta property="og:title" content="MTN @ 30 Promo - Share & Earn 3,000 Points + 30GB Data">
+    <meta property="og:description" content="MTN is celebrating 30 years! Share and earn 3,000 points + 30GB data. Join thousands of Ghanaians earning rewards now!">
+    <meta property="og:image" content="https://github.com/user-attachments/assets/d6b5f553-5c72-45e5-828d-6c6be7b21cf8">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://mtnmomo.online/3000point+30gb">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MTN @ 30 Promo - Share & Earn 3,000 Points + 30GB Data">
+    <meta name="twitter:description" content="MTN is celebrating 30 years! Share and earn 3,000 points + 30GB data.">
+    <meta name="twitter:image" content="https://github.com/user-attachments/assets/d6b5f553-5c72-45e5-828d-6c6be7b21cf8">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -48,7 +63,6 @@
         /* Banner Styles */
         .banner {
             width: 100%;
-            height: 100%;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -56,18 +70,29 @@
             background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--primary-blue) 100%);
         }
 
-        .banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        /* Top Banner - Full Height on Mobile */
+        .banner-top {
+            min-height: 250px;
+            height: auto;
+            border-radius: 0 0 20px 20px;
         }
 
-        .banner-top {
-            border-radius: 0 0 20px 20px;
+        .banner-top img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
         }
 
         .banner-bottom {
             border-radius: 20px 20px 0 0;
+            min-height: 150px;
+        }
+
+        .banner-bottom img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Section Styles */
@@ -723,8 +748,15 @@
                 font-size: 20px;
             }
 
-            .banner {
-                height: 200px;
+            /* Top Banner - Full Height on Mobile */
+            .banner-top {
+                min-height: 280px;
+            }
+
+            .banner-top img {
+                width: 100%;
+                height: auto;
+                display: block;
             }
 
             .security-notice-section {
@@ -816,7 +848,7 @@
     <div class="container">
         <!-- Top Banner Image -->
         <div class="banner banner-top">
-            <img src="https://github.com/user-attachments/assets/d6b5f553-5c72-45e5-828d-6c6be7b21cf8">
+            <img src="https://github.com/user-attachments/assets/d6b5f553-5c72-45e5-828d-6c6be7b21cf8" alt="MTN @30 Rewards">
         </div>
 
         <!-- Security Notice Section -->
@@ -949,7 +981,7 @@
 
         <!-- Bottom Banner Image -->
         <div class="banner banner-bottom">
-            <img src="https://github.com/user-attachments/assets/ababe65e-e10a-4055-ab65-d3c8b56c3c5b">
+            <img src="https://github.com/user-attachments/assets/ababe65e-e10a-4055-ab65-d3c8b56c3c5b" alt="MTN @30 Celebration">
         </div>
     </div>
 
@@ -1460,9 +1492,9 @@
             // Update share button state
             updateShareButtonState();
 
-            // WhatsApp Share Logic
+            // WhatsApp Share Logic - with image preview support
             const shareMessage = encodeURIComponent(
-                `MTN @ 30 promo is still live.\nShare and earn 3,000 points + 30GB data\n\nEnter here and claim your reward:\nhttps://mtnmomo.online/3000point+30gb\n\n✨ Increase your chance of winning ✨`
+                `MTN @ 30 promo is still live.\nShare and earn 3,000 points + 30GB data\n\nEnter here and claim your reward:\nhttps://mtnmomo.online/3000_point+30gb\n\n✨ Increase your chance of winning ✨`
             );
             window.open(
                 `https://api.whatsapp.com/send?text=${shareMessage}`,
